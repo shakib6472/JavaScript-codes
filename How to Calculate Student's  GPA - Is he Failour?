@@ -1,0 +1,75 @@
+
+var bangla = parseFloat(prompt("How much did you score in Bangla?"));
+var english = parseFloat(prompt("How much did you score in English?"));
+var math = parseFloat(prompt("How much did you score in Math?"));
+var science = parseFloat(prompt("How much did you score in Science?"));
+var social = parseFloat(prompt("How much did you score in Social?"));
+var islam = parseFloat(prompt("How much did you score in Islam?"));
+
+var subjectName = "Bangla";
+var subInfoValue = bangla;
+var pointTotal = 0.00;
+var failPoint = 1;
+
+function gradingScale(subValue) {
+    if (subValue >= 80){
+        document.write("Your " + subjectName + " Grade is A+<br>");
+        pointTotal += 5.00;
+        document.write("Your " + subjectName + " point is " + 5.00 + "<br>");
+    } else if (subValue >= 70){
+        document.write("Your " + subjectName + " Grade is A<br>");
+        pointTotal += 4.00;
+        document.write("Your " + subjectName + " point is " + 4.00 + "<br>");
+    } else if (subValue >= 60){
+        document.write("Your " + subjectName + " Grade is A-<br>");
+        pointTotal += 3.50;
+        document.write("Your " + subjectName + " point is " + 3.50 + "<br>");
+    } else if (subValue >= 50){
+        document.write("Your " + subjectName + " Grade is B<br>");
+        pointTotal += 3.00;
+        document.write("Your " + subjectName + " point is " + 3.00 + "<br>");
+    } else if (subValue >= 40){
+        document.write("Your " + subjectName + " Grade is C<br>");
+        pointTotal += 2.00;
+        document.write("Your " + subjectName + " point is " + 2.00 + "<br>");
+    } else if (subValue >= 33){
+        document.write("Your " + subjectName + " Grade is D<br>");
+        pointTotal += 1.00;
+        document.write("Your " + subjectName + " point is " + 1.00 + "<br>");
+    } else {
+        failPoint += 1;
+        document.write("Your " + subjectName + " Grade is Fail<br>");
+        pointTotal += 0.00;
+        document.write("Your " + subjectName + " point is " + 0.00 + "<br>");
+    }
+}
+
+gradingScale(subInfoValue);
+
+var subjectName = "English";
+var subInfoValue = english;
+gradingScale(subInfoValue);
+var subjectName = "Math";
+var subInfoValue = math;
+gradingScale(subInfoValue);
+var subjectName = "Science";
+var subInfoValue = science;
+gradingScale(subInfoValue);
+var subjectName = "Social";
+var subInfoValue = social;
+gradingScale(subInfoValue);
+var subjectName = "Islam";
+var subInfoValue = islam;
+gradingScale(subInfoValue);
+
+if ( failPoint !== 1) {
+
+    document.write("Your are a Failaur");
+
+} else {
+    document.write("Your Total GPA = " + (pointTotal / 6));
+}
+
+
+
+
